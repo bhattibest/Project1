@@ -1,0 +1,34 @@
+
+<html>
+    <head>
+    <script type="text/javascript">
+    function celsius(temp) {
+       return (5/9 * (temp - 32));
+    }
+    
+    function fahrenheit(temp) {
+       return (9/5 * temp + 32);
+    }
+    function to_celsius(temp) {
+       document.getElementById("ctemp").value=celsius(temp);
+    }
+    
+    function to_fahrenheit(temp) {
+       document.getElementById("ftemp").value=fahrenheit(temp);
+    }
+    </script>
+    </head>
+    
+    <body>
+    
+    <form>
+      <label>Fahrenheit temperature:</label>
+      <input type="text" id="ftemp" />
+      <input type="button" value="To celsius" onClick="to_celsius(ftemp.value)" /><br/>
+      <label>Celsius temperature:</label>
+      <input type="text" id="ctemp" />
+      <input type="button" value="To fahrenheit" onClick="to_fahrenheit(ctemp.value)" />
+    </form>
+    
+    </body>
+    </html>

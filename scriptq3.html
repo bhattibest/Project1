@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<title>Sample Solution to JavaScript Lab Exercise 3</title>
+<script type="text/javascript" src="jquery-3.6.0.js"></script>
+<script type="text/javascript">
+function findAuthors() {
+  $.get( "pods98.xml", function( xml ) {
+    var authors = xml.querySelectorAll("author")
+    var output = "<ul>";
+    for ( i = 0; i < authors.length; i++ )
+      output = output + "<li>" + authors[i].firstChild.nodeValue + "</li>";
+    document.getElementById("authorList").innerHTML = output + "</ul>";
+    },
+    "xml"
+    );
+}
+
+window.onload = function() {
+  document.getElementById("authorButton").onclick = findAuthors;
+}
+</script>
+</head>
+
+<body>
+<h1>Sample Solution to JavaScript Lab Exercise 3</h1>
+
+<button id="authorButton">Find authors</button>
+
+<div id="authorList"></div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<title>Sample Solution to JavaScript Lab Exercise 2</title>
+<script type = "text/javascript">
+   function larger() {
+      var x = document.getElementById("num1").value;
+      var y = document.getElementById("num2").value;
+      var r = document.getElementById("result");
+      if (parseInt(x) > parseInt(y))
+            r.value = x;
+         else 
+            r.value = y;
+   }
+</script>
+<style>
+  .myForm {
+    display: grid;
+    width: 20%;
+    grid-template-columns: [labels] auto [controls] auto;
+    grid-auto-flow: row;
+    grid-gap: .8em;
+    padding: 1.2em;
+  }
+  .myForm > label  {
+    grid-column: labels;
+    grid-row: auto;
+  }
+  .myForm > input {
+    grid-column: controls;
+    grid-row: auto;
+  }
+</style>
+</head>
+
+<body>
+<h1>Sample Solution to JavaScript Lab Exercise 2</h1>
+
+<form class="myForm">
+  <label>Enter first integer:</label>
+  <input type="number" id="num1" size="15">
+  <label>Enter second integer:</label>
+  <input type="number" id="num2" size="15">
+  <input type="button" value="Determine larger" onClick="larger()">
+  <label>The larger integer is:</label>
+  <input type="number" id="result" size="15">
+</form>
+
+</body>
+</html>
